@@ -20,7 +20,7 @@ public class ApplicationSingletonFrame extends JFrame {
 		return instance;
 	}
 	
-	public void startApplication() {
+	public void showApplicationFrame() {
 		setSize(600, 600);
 		setTitle("Dice Wars");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

@@ -1,4 +1,5 @@
 import view.ApplicationSingletonFrame;
+import view.GameSettingsSingletonPanel;
 
 
 public class Main {
@@ -7,7 +8,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ApplicationSingletonFrame applicationInstanceFrame = ApplicationSingletonFrame.instance();
-		applicationInstanceFrame.startApplication();
+		GameSettingsSingletonPanel settings = GameSettingsSingletonPanel.instance();
+		settings.startApplicationSettings();
 	}
 }
