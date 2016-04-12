@@ -41,8 +41,6 @@ public class GenerateFields {
 				int randomDiceNumberOnThisField = Math.min(8, UtilFunctions.generateIntBetweenRange(1, availableDicesPerPlayer.get(randomPlayerIndex) - availableFieldsPerPlayer.get(randomPlayerIndex)));
 				availableDicesPerPlayer.put(randomPlayerIndex, randomPlayerDicesNumber - randomDiceNumberOnThisField);
 				
-				System.out.println(availableFieldsPerPlayer.get(randomPlayerIndex) + " "+availableDicesPerPlayer.get(randomPlayerIndex));
-				
 				fieldControllers[x][y] = new FieldController(new FieldView(), new FieldBean( randomDiceNumberOnThisField, players.get(randomPlayerIndex)));
 				gameView.add(fieldControllers[x][y].getView());
 			}

@@ -7,6 +7,7 @@ import view.FieldView;
 public class FieldController {
 	private FieldView view;
 	private FieldBean model;
+	private boolean isSelected = false;
 	
 	public FieldController(FieldView fieldView, FieldBean model) {
 		super();
@@ -44,4 +45,21 @@ public class FieldController {
 	public void setDiceNumberText(int diceNumber) {
 		view.setDiceNumberText(diceNumber);
 	}
+
+	public boolean isSelected() {
+		return isSelected;
+	}
+
+	public void setSelected(boolean isSelected) {
+		if(!isSelected) {
+			view.resetBackgroundColor();
+		}
+		else {
+			view.highlightBackgroundColorForSelect();
+		}
+		
+		this.isSelected = isSelected;
+	}
+	
+	
 }
