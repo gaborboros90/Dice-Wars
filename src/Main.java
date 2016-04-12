@@ -1,4 +1,3 @@
-import view.ApplicationSingletonFrame;
 import view.GameSettingsSingletonPanel;
 
 

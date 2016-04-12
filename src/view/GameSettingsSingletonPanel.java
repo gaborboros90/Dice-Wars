@@ -1,17 +1,21 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
-import java.security.acl.Owner;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class GameSettingsSingletonPanel extends JPanel{
+import controller.GameController;
+
+public class GameSettingsSingletonPanel extends JPanel {
 
 	/**
 	 * 
@@ -23,15 +27,27 @@ public class GameSettingsSingletonPanel extends JPanel{
 	private JLabel appOwnerText;
 	private JButton[] settingsButtons;
 	private JPanel buttonContainer;
+	private JPanel tableSizeContainer;
+	private JComboBox tableSizeCb;
+	private JLabel tableSizeLabel;
+	private String[] tableSizesText = { "Small", "Medium", "Large"};
+	
+	private GameController gameController;
 	
 	private ApplicationSingletonFrame frameInstance;
 	
 	private GameSettingsSingletonPanel() {
-		gameSettingsLayout = new GridLayout(3,1, 20,20);
-		playersNumberText = new JLabel("SZTE Dice Wars", JLabel.CENTER);
+		frameInstance = ApplicationSingletonFrame.instance();
+		
+		gameSettingsLayout = new GridLayout(4,1, 20,20);
+		playersNumberText = new JLabel("SZTE Dice Wars",new ImageIcon(this.getClass().getResource("../images/diceIcon.png")), JLabel.CENTER);
 		playersNumberText.setFont(new Font("Serif",Font.BOLD,22));
+		playersNumberText.setHorizontalTextPosition(JLabel.LEADING);
 		appOwnerText = new JLabel("Tamás Kapitány, SZTE 2016", JLabel.CENTER);
 		settingsButtons = new JButton[4];
+		tableSizeContainer = new JPanel(new FlowLayout(FlowLayout.CENTER, 180, 0));
+		tableSizeCb = new JComboBox(tableSizesText);
+		tableSizeLabel = new JLabel("Choose table size: ");
 		
 		buttonContainer = new JPanel();
 	}
@@ -50,21 +66,42 @@ public class GameSettingsSingletonPanel extends JPanel{
 		
 		for(int i = 0; i <= 3 ; i++) {
 			settingsButtons[i] = new JButton(i+2+" players");
-			settingsButtons[i].setVerticalAlignment(JButton.CENTER);
+			settingsButtons[i].setActionCommand(Integer.toString(i+2));
+			settingsButtons[i].addActionListener(new ActionListener() {
+				
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					int numberOfPlayers = Integer.parseInt(e.getActionCommand());
+					removePanel();
+					new GameController(numberOfPlayers, (String)tableSizeCb.getSelectedItem());
+				}
+			});
+			
 			buttonContainer.add(settingsButtons[i]);
 		}
 		
+		tableSizeContainer.add(tableSizeLabel);
+		tableSizeContainer.add(tableSizeCb);
+		
 		add(playersNumberText);
 		add(buttonContainer);
+		add(tableSizeContainer);
 		add(appOwnerText);
 	}
 	
 	public void startApplicationSettings () {
 		initSettingsPanel();
 		
-		frameInstance = ApplicationSingletonFrame.instance();
 		frameInstance.showApplicationFrame();
 		frameInstance.add(this);
+	}
+	
+	private void removePanel() {
+		JPanel framePanel = (JPanel)frameInstance.getContentPane();
+		framePanel.remove(this);
+		framePanel.revalidate();
+		framePanel.repaint();
 	}
 	
 	public void finalize() {
