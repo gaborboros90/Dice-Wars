@@ -9,7 +9,6 @@ import javax.swing.JPanel;
 
 import model.FieldBean;
 import model.PlayerBean;
-import model.PlayerColor;
 import view.FieldView;
 import controller.FieldController;
 

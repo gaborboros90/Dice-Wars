@@ -28,11 +28,9 @@ public class GameSettingsSingletonPanel extends JPanel {
 	private JButton[] settingsButtons;
 	private JPanel buttonContainer;
 	private JPanel tableSizeContainer;
-	private JComboBox tableSizeCb;
+	private JComboBox<String> tableSizeCb;
 	private JLabel tableSizeLabel;
 	private String[] tableSizesText = { "Small", "Medium", "Large"};
-	
-	private GameController gameController;
 	
 	private ApplicationSingletonFrame frameInstance;
 	
@@ -46,7 +44,7 @@ public class GameSettingsSingletonPanel extends JPanel {
 		appOwnerText = new JLabel("Tamás Kapitány, SZTE 2016", JLabel.CENTER);
 		settingsButtons = new JButton[4];
 		tableSizeContainer = new JPanel(new FlowLayout(FlowLayout.CENTER, 180, 0));
-		tableSizeCb = new JComboBox(tableSizesText);
+		tableSizeCb = new JComboBox<String>(tableSizesText);
 		tableSizeLabel = new JLabel("Choose table size: ");
 		
 		buttonContainer = new JPanel();
