@@ -12,7 +12,23 @@ import model.PlayerBean;
 import view.FieldView;
 import controller.FieldController;
 
+/**
+ * 
+ * Osztály tábla generálására
+ *
+ */
+
 public class GenerateFields {
+	/**
+	 * Statikus metódus, tábla generálására
+	 * 
+	 * @param numberOfPlayers játékosok száma
+	 * @param calculatedTableWitdh kiszámított tábla szélesség
+	 * @param players Játékosok
+	 * @param gameView Játék panelje
+	 * @return Mezõ controllerjeinek kettõ dimenziós tömbje
+	 */
+	
 	public static FieldController[][] generate(int numberOfPlayers, int calculatedTableWitdh, ArrayList<PlayerBean> players, JPanel gameView) {
 		Map<Integer, Integer> availableFieldsPerPlayer = new HashMap<Integer, Integer>();
 		Map<Integer, Integer> availableDicesPerPlayer = new HashMap<Integer, Integer>();
@@ -47,6 +63,14 @@ public class GenerateFields {
 		
 		return fieldControllers;
 	}
+	
+	/**
+	 * Táblra méreteinek (szélesség ,magasság) meghatározása a játékos számának és a tábla méretének (S,M,L) alapján
+	 * 
+	 * @param nmbOfPlayers Játékos száma
+	 * @param tableSize Kiválasztott tábla méret (S,M,L)
+	 * @return Egész érték, a tábla szélessége
+	 */
 	
 	public static int getTableSizeRelatedToNumberOfPlayers(int nmbOfPlayers, String tableSize) {
 		int tableWidth = 0;

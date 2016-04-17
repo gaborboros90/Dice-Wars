@@ -15,11 +15,11 @@ import javax.swing.JPanel;
 
 import controller.GameController;
 
-public class GameSettingsSingletonPanel extends JPanel {
+/**
+ * Egyke osztály a játék inicializálásához
+ */
 
-	/**
-	 * 
-	 */
+public class GameSettingsSingletonPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static GameSettingsSingletonPanel instance = null;
 	private LayoutManager gameSettingsLayout;
@@ -58,6 +58,10 @@ public class GameSettingsSingletonPanel extends JPanel {
 		return instance;
 	}
 	
+	/**
+	 * Beállítás panel inicializálása (itt választhatunk játékos számot és tábla méretet)
+	 */
+	
 	private void initSettingsPanel () {
 		setLayout(gameSettingsLayout);
 		buttonContainer.setLayout(new FlowLayout());
@@ -88,12 +92,20 @@ public class GameSettingsSingletonPanel extends JPanel {
 		add(appOwnerText);
 	}
 	
+	/**
+	 * Panel hozzáadása a kerethez
+	 */
+	
 	public void startApplicationSettings () {
 		initSettingsPanel();
 		
 		frameInstance.showApplicationFrame();
 		frameInstance.add(this);
 	}
+	
+	/**
+	 * Panel eltávolítása a keretrõl
+	 */
 	
 	private void removePanel() {
 		JPanel framePanel = (JPanel)frameInstance.getContentPane();

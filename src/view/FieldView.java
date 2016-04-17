@@ -11,10 +11,13 @@ import javax.swing.JPanel;
 
 import model.PlayerColor;
 
+/**
+ * 
+ * Osztály a mezõk GUI komponenseihez
+ *
+ */
+
 public class FieldView extends JPanel{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JLabel diceNumberText;
 	private Color defaultColor;
@@ -28,9 +31,19 @@ public class FieldView extends JPanel{
 		setBorder(BorderFactory.createLineBorder(Color.BLACK));
 	}
 	
+	/**
+	 * Kockák számának megjelenítése a mezõn (GUI-n)
+	 * @param diceNumber Kockák száma
+	 */
+	
 	public void setDiceNumberText(int diceNumber) {
 		diceNumberText.setText(Integer.toString(diceNumber));
 	}
+	
+	/**
+	 * Mezõ színezése a játékos színe alapján
+	 * @param COLOR Játékos színe
+	 */
 	
 	public void setBackgroundColor(PlayerColor COLOR) {
 		switch (COLOR) {
@@ -64,9 +77,17 @@ public class FieldView extends JPanel{
 		}
 	}
 	
+	/**
+	 * Háttérszín visszaállítása alapértelmezett színre
+	 */
+	
 	public void resetBackgroundColor() {
 		setBackground(defaultColor);
 	}
+	
+	/**
+	 * Háttérszín beállítása, ha kiválasztottuk a mezõt (támadni szeretnénk ezzel a mezõvel)
+	 */
 	
 	public void highlightBackgroundColorForSelect() {
 		setBackground(Color.BLACK);
