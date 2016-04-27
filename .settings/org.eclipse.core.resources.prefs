@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/Main.java=UTF-8
+encoding//src/controller/FieldController.java=UTF-8
+encoding//src/model/FieldBean.java=UTF-8
+encoding//src/model/PlayerBean.java=UTF-8
+encoding//src/model/PlayerColor.java=UTF-8
+encoding//src/view/ApplicationSingletonFrame.java=UTF-8
+encoding//src/view/FieldView.java=UTF-8
+encoding//src/view/GameSettingsSingletonPanel.java=UTF-8
+encoding//src/view/GameView.java=UTF-8
+encoding//src/workflow/GameLogic.java=UTF-8
+encoding//src/workflow/GenerateFields.java=UTF-8
+encoding//src/workflow/GeneratePlayers.java=UTF-8
+encoding//src/workflow/UtilFunctions.java=UTF-8

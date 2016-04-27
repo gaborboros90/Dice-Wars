@@ -16,8 +16,8 @@ import workflow.GeneratePlayers;
 
 /**
  * 
- * Ezt az osztályt a játék játék közbeni vezérlésére használljuk
- * illetve itt helyezzük el az eseménykezelõket is.
+ * Ezt az osztÃ¡lyt a jï¿½tï¿½k jï¿½tï¿½k kï¿½zbeni vezï¿½rlï¿½sï¿½re hasznï¿½lljuk
+ * illetve itt helyezzï¿½k el az esemï¿½nykezelï¿½ket is.
  */
 
 public class GameController {
@@ -30,10 +30,10 @@ public class GameController {
 	private GameLogic gameLogic;
 	
 	/**
-	 * Inicializálásért felelõs
+	 * Inicializï¿½lï¿½sï¿½rt felelï¿½s
 	 * 
-	 * @param numberOfPlayers Játékosok száma
-	 * @param sizeOfTable Tábla mérete
+	 * @param numberOfPlayers Jï¿½tï¿½kosok szï¿½ma
+	 * @param sizeOfTable Tï¿½bla mï¿½rete
 	 */
 	
 	public GameController(int numberOfPlayers, String sizeOfTable) {
@@ -48,8 +48,8 @@ public class GameController {
 	
 	
 	/**
-	 * Eseménykezelés inicializálásáért felelõs metódus. Minden mezõre külön listenereket teszünk
-	 * Kör átadása gombra is beállítjuk az eseménykezelést
+	 * Esemï¿½nykezelï¿½s inicializï¿½lï¿½sï¿½ï¿½rt felelï¿½s metï¿½dus. Minden mezï¿½re kï¿½lï¿½n listenereket teszï¿½nk
+	 * Kï¿½r ï¿½tadï¿½sa gombra is beï¿½llï¿½tjuk az esemï¿½nykezelï¿½st
 	 */
 		
 	private void generateListeners() {
@@ -110,7 +110,7 @@ public class GameController {
 	}
 	
 	/**
-	 * Kiválasztás eltávolítása az összes mezõrõl
+	 * Kivï¿½lasztï¿½s eltï¿½volï¿½tï¿½sa az ï¿½sszes mezï¿½rï¿½l
 	 */
 	
 	private void removeSelectFromAllFields () {
@@ -123,7 +123,7 @@ public class GameController {
 	
 	/**
 	 * 
-	 * @return Van-e kiválasztva mezõ 
+	 * @return Van-e kivï¿½lasztva mezï¿½ 
 	 */
 	
 	private boolean isAnyFieldSelected() {
@@ -139,11 +139,11 @@ public class GameController {
 	
 	/**
 	 * 
-	 * @param tryingRowToSelect Mezõ sora, amit ki szeretnénk választani a táblán (ahová kattintottunk)
-	 * @param tryingColumnToSelect Mezõ oszlopa, amit ki szeretnénk választani a táblán (ahová kattintottunk)
-	 * @param selectedRow Korábban kiválasztott mezõ sora a táblán
-	 * @param selectedColumn Korábban kiválasztott mezõ oszlopa a táblán
-	 * @return Szomszédos elemet akarunk-e támadni?
+	 * @param tryingRowToSelect Mezï¿½ sora, amit ki szeretnï¿½nk vï¿½lasztani a tï¿½blï¿½n (ahovï¿½ kattintottunk)
+	 * @param tryingColumnToSelect Mezï¿½ oszlopa, amit ki szeretnï¿½nk vï¿½lasztani a tï¿½blï¿½n (ahovï¿½ kattintottunk)
+	 * @param selectedRow Korï¿½bban kivï¿½lasztott mezï¿½ sora a tï¿½blï¿½n
+	 * @param selectedColumn Korï¿½bban kivï¿½lasztott mezï¿½ oszlopa a tï¿½blï¿½n
+	 * @return Szomszï¿½dos elemet akarunk-e tï¿½madni?
 	 */
 	
 	private boolean isNeighBour(int tryingRowToSelect, int tryingColumnToSelect, int selectedRow, int selectedColumn) {
@@ -151,7 +151,7 @@ public class GameController {
 	}
 	
 	/**
-	 * Kiválasztások törlése
+	 * Kivï¿½lasztï¿½sok tï¿½rlï¿½se
 	 */
 	
 	private void resetSelect() {
