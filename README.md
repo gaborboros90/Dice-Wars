@@ -1,1 +1,1 @@
-# Dice-Wars
+Simple Java Swing game
